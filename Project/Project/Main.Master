@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Project.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css">
+
+    <style>
+        .navbar{
+            background-color:lightslategray;           
+        }
+        .navbar ul li 
+        {
+            color:white;    
+        }
+        .navbar-default .navbar-nav li a 
+        {
+            color: white;
+        }        
+        a
+        {
+            font-size:medium;
+            font-weight:bold;
+        }
+        li:hover
+        {
+            background-color:white;           
+        }
+        .active
+        {
+            color:blueviolet;
+        }
+        .card 
+        {
+            box-shadow: 0 12px 23px 0 rgb(0 0 0 / 70%), 0 6px 25px 0 rgb(0 0 0 / 19%);
+            text-align: center;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="bodytag" runat="server">
+    <asp:Panel ID="PDefault" runat="server">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">                        
+                <ul class="nav navbar-nav">              
+                    <li><a>Disk Space Rental System</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Login.aspx">Login</a></li>  
+                </ul>
+            </div>
+        </nav>  
+    </asp:Panel>
+
+    <asp:Panel ID="PAdmin" runat="server">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">                        
+                <ul class="nav navbar-nav">              
+                    <li><a href="Space.aspx">Space</a></li>
+                    <li><a href="AllTransactions.aspx">Transactions</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Login.aspx">Login</a></li>  
+                </ul>
+            </div>
+        </nav>  
+    </asp:Panel>
+
+    <asp:Panel ID="PUser" runat="server">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">                        
+                <ul class="nav navbar-nav">              
+                    <li><a id="hm" runat="server" onserverclick="Home">Home</a></li>                                     
+                    <li><a id="prf" runat="server" onserverclick="profile">Profile</a></li>                                     
+                    <li><a id="rntsp" runat="server" onserverclick="RentSpace">Rent Space</a></li>                                     
+                    <li><a id="bsp" runat="server" onserverclick="BuySpace">Buy Space</a></li>                                     
+                    <li><a id="trs" runat="server" onserverclick="transaction">Transactions</a></li>                                     
+                    <li><a id="chngp" runat="server" onserverclick="ChngPass">Change Password</a></li>                                     
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Login.aspx">Logout</a></li>  
+                </ul>
+            </div>
+        </nav>  
+    </asp:Panel>
+    <form id="form1" runat="server">
+        <div >            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
